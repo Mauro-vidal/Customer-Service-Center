@@ -1,6 +1,8 @@
 package com.mauro.project.helpdesk.dominio;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mauro.project.helpdesk.domain.enums.Perfil;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -8,16 +10,25 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Entity
 public abstract class Pessoa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
     protected String nome;
+    @Column(unique = true)
     protected String cpf;
+    @Column(unique = true)
     protected String email;
     protected String senha;
 
+    @ElementCollection(fetch = FetchType.EAGER) // Assegura que a lista de perfis vêm junto com o usuário quando ele for chamado
+    @CollectionTable(name = "PERFIS")
    protected Set<Integer> perfis = new HashSet<>();
-    protected LocalDate datacCriacao = LocalDate.now();
+
+   @JsonFormat(pattern = "dd/MM/yyyy")
+    protected LocalDate dataCriacao = LocalDate.now();
 
     public Pessoa(){
         super();
@@ -82,12 +93,12 @@ public abstract class Pessoa {
         this.perfis.add(perfil.getCodigo()) ;
     }
 
-    public LocalDate getDatacCriacao() {
-        return datacCriacao;
+    public LocalDate getDataCriacao() {
+        return dataCriacao;
     }
 
-    public void setDatacCriacao(LocalDate datacCriacao) {
-        this.datacCriacao = datacCriacao;
+    public void setDataCriacao(LocalDate dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
     @Override

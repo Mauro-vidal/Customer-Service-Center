@@ -1,12 +1,15 @@
 package com.mauro.project.helpdesk.dominio;
 
 import com.mauro.project.helpdesk.domain.enums.Perfil;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Tecnico extends Pessoa {
-
+    @OneToMany(mappedBy = "tecnico")
     private List<Chamado> chamados = new ArrayList<>();
 
     public Tecnico(){
