@@ -28,7 +28,7 @@ public enum Status {
                return x;
            }
        }
-       throw new IllegalArgumentException("Status inválido");
+       throw new IllegalArgumentException("Status inválido.");
 
     }
 }
