@@ -25,6 +25,7 @@ public class HelpdeskApplication implements CommandLineRunner {
 	@Autowired
 	private ChamadoRepository chamadoRepository;
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(HelpdeskApplication.class, args);
 	}
@@ -41,5 +42,6 @@ public class HelpdeskApplication implements CommandLineRunner {
 		tecnicoRepository.saveAll(Arrays.asList(tec1));
 		clienteRepository.saveAll(Arrays.asList(cli1));
 		chamadoRepository.saveAll(Arrays.asList(c1));
+
 	}
 }
