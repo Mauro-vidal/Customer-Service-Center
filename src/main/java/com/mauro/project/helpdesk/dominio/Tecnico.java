@@ -1,5 +1,6 @@
 package com.mauro.project.helpdesk.dominio;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mauro.project.helpdesk.domain.enums.Perfil;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -9,6 +10,8 @@ import java.util.List;
 
 @Entity
 public class Tecnico extends Pessoa {
+
+    @JsonIgnore
     @OneToMany(mappedBy = "tecnico")
     private List<Chamado> chamados = new ArrayList<>();
 
