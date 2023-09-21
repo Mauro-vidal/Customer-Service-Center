@@ -1,0 +1,77 @@
+[33mcommit ddbedd575d07986178ba2fcf11f1b0a98217db96[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Thu Sep 21 16:41:03 2023 -0300
+
+    Criando exeção para objeto não encontrado ou que não existe.
+
+[33mcommit 4558d96a77195c1c31230ed3a289fb2b9dfb7c72[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Thu Sep 21 15:42:15 2023 -0300
+
+    Removendo comentários.
+
+[33mcommit 8a606c3eb24f874226d81235e1491b56751d3cb5[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Thu Sep 21 15:39:15 2023 -0300
+
+    Padrão DTO para Técnico.
+
+[33mcommit 7382298963ff8f2b165fe028eaa68204c004469d[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Thu Sep 21 11:13:44 2023 -0300
+
+    Busca do técnico por id.
+
+[33mcommit 68f60d91c419b9543acba563a8174216266bd0cc[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Thu Sep 21 11:11:17 2023 -0300
+
+    Protegendo aplicação contra serialização.
+
+[33mcommit e57ffd2c0f28357ea5de9c88ee1a67abf1da8a6d[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Thu Sep 21 00:38:57 2023 -0300
+
+    Configuração do mySQL.
+
+[33mcommit 7c3951e87f4452b87ff6d04d4a8efb8ef4270b79[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Wed Sep 20 23:14:38 2023 -0300
+
+    Services e propries para teste.
+
+[33mcommit 8d3a40c3dbea9db1e1643025d913ea37dacaca16[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Wed Sep 20 22:36:39 2023 -0300
+
+    carga inicial da base de dados.
+
+[33mcommit 5a6e0cba1d81538314363be382b0d7c424129083[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Wed Sep 20 22:29:47 2023 -0300
+
+    repositories criados
+
+[33mcommit b318b52dd32fb38d3be9df52a6fa9dbed385e10a[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Wed Sep 20 18:38:10 2023 -0300
+
+    Anotações JPA para classe de domínio.
+
+[33mcommit 64753335a0c1f7e71d9b2bfadda76046a36250be[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Wed Sep 20 18:14:04 2023 -0300
+
+    Atributos das classes criados
+
+[33mcommit 58d8a5e6066647e79708cd3f51e91130f464bc50[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Wed Sep 20 17:26:36 2023 -0300
+
+    Classes de domínio criadas.
+
+[33mcommit 366adcacb3547f20fb56fce5e6ffb5d8f33edeaf[m
+Author: Mauro-vidal <mauroviidal@gmail.com>
+Date:   Wed Sep 20 17:13:07 2023 -0300
+
+    Início do projeto
