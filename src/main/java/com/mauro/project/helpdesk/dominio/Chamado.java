@@ -48,6 +48,7 @@ public class Chamado implements Serializable {
         this.observacoes = observacoes;
         this.tecnico = tecnico;
         this.cliente = cliente;
+
     }
 
     public Integer getId() {
