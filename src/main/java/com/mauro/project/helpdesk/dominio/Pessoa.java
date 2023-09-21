@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 @Entity
 public abstract class Pessoa {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
