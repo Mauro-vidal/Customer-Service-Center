@@ -3,6 +3,7 @@ package com.mauro.project.helpdesk.dtos;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mauro.project.helpdesk.domain.enums.Perfil;
 import com.mauro.project.helpdesk.dominio.Tecnico;
+import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -13,9 +14,17 @@ import java.util.stream.Collectors;
 
 public class TecnicoDTO implements Serializable {
     private Integer id;
+
+    @NotNull(message = "O campo NOME é obrigatório!")
     private String nome;
+
+    @NotNull(message = "O campo CPF é obrigatório!")
     private String cpf;
+
+    @NotNull(message = "O campo E-mail é obrigatório!")
     private String email;
+
+    @NotNull(message = "O campo SENHA é obrigatório!")
     private String senha;
     private Set<Integer> perfis = new HashSet<>();
     @JsonFormat(pattern = "dd/MM/yyyy")
