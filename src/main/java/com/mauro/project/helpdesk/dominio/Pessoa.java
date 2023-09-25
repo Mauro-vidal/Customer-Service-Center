@@ -3,6 +3,7 @@ package com.mauro.project.helpdesk.dominio;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mauro.project.helpdesk.domain.enums.Perfil;
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -16,6 +17,8 @@ public abstract class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
     protected String nome;
+
+
     @Column(unique = true)
     protected String cpf;
     @Column(unique = true)
