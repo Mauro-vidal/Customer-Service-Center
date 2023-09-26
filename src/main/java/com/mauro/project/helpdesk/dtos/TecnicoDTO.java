@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mauro.project.helpdesk.domain.enums.Perfil;
 import com.mauro.project.helpdesk.dominio.Tecnico;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -19,6 +20,7 @@ public class TecnicoDTO implements Serializable {
     private String nome;
 
     @NotNull(message = "O campo CPF é obrigatório!")
+    @CPF
     private String cpf;
 
     @NotNull(message = "O campo E-mail é obrigatório!")
