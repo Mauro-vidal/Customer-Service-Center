@@ -22,13 +22,11 @@ public class JWTAuthenticationFilter  extends UsernamePasswordAuthenticationFilt
 
     private AuthenticationManager authenticationManager;
     private JWTUtil jwtUtil;
-
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil) {
         super();
         this.authenticationManager = authenticationManager;
         this.jwtUtil = jwtUtil;
     }
-
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException {
@@ -44,13 +42,17 @@ public class JWTAuthenticationFilter  extends UsernamePasswordAuthenticationFilt
     }
 
     @Override
-    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
-                                            Authentication authResult) throws IOException, ServletException {
+    protected void successfulAuthentication(HttpServletRequest req,
+                                            HttpServletResponse res,
+                                            FilterChain chain,
+                                            Authentication auth) throws IOException, ServletException {
 
-        String username = ((UserSS) authResult.getPrincipal()).getUsername();
+        String username = ((UserSS) auth.getPrincipal()).getUsername();
         String token = jwtUtil.generateToken(username);
-        response.setHeader("access-control-expose-headers", "Authorization");
-        response.setHeader("Authorization", "Bearer " + token);
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
+        res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, enctype, Location");
+        res.setHeader("Authorization", "Bearer " + token);
     }
 
     @Override
@@ -61,7 +63,6 @@ public class JWTAuthenticationFilter  extends UsernamePasswordAuthenticationFilt
         response.setContentType("application/json");
         response.getWriter().append(json());
     }
-
     private CharSequence json() {
         long date = new Date().getTime();
         return "{"
@@ -71,7 +72,8 @@ public class JWTAuthenticationFilter  extends UsernamePasswordAuthenticationFilt
                 + "\"message\": \"Email ou senha inválidos\", "
                 + "\"path\": \"/login\"}";
     }
-
 }
+
+
 
 
