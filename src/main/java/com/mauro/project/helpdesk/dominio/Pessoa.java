@@ -2,7 +2,7 @@ package com.mauro.project.helpdesk.dominio;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mauro.project.helpdesk.domain.enums.Perfil;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;

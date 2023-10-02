@@ -10,6 +10,7 @@ import com.mauro.project.helpdesk.repositories.ChamadoRepository;
 import com.mauro.project.helpdesk.repositories.ClienteRepository;
 import com.mauro.project.helpdesk.repositories.TecnicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -24,24 +25,27 @@ public class DBService {
     @Autowired
     private ChamadoRepository chamadoRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
     public void instanciaDB(){
 
 
-        Tecnico tec1 = new Tecnico(null, "Valdir cezar", "92836596198", "valdir@mail.com", "123");
+        Tecnico tec1 = new Tecnico(null, "Valdir cezar", "92836596198", "valdir@mail.com", encoder.encode("123"));
         tec1.addPerfil(Perfil.ADMIN);
-        Tecnico tec2 = new Tecnico(null, "Mauro João Mendes Vidal", "106.793.799-40", "mauroviidal@gmail.com", "123456");
+        Tecnico tec2 = new Tecnico(null, "Mauro João Mendes Vidal", "106.793.799-40", "mauroviidal@gmail.com", encoder.encode("123456"));
         tec2.addPerfil(Perfil.TECNICO);;
-        Tecnico tec3 = new Tecnico(null, "João Pedro", "271.068.470-54", "joaop@mail.com", "123");
-        Tecnico tec4 = new Tecnico(null, "Dorival Junior", "162.720.120-39", "dorivaljunior@mail.com", "300");
-        Tecnico tec5 = new Tecnico(null, "Jorge Jesus", "778.556.170-27", "jorgejj@mail.com", "8070a2");
+        Tecnico tec3 = new Tecnico(null, "João Pedro", "271.068.470-54", "joaop@mail.com", encoder.encode("123"));
+        Tecnico tec4 = new Tecnico(null, "Dorival Junior", "162.720.120-39", "dorivaljunior@mail.com", encoder.encode("300"));
+        Tecnico tec5 = new Tecnico(null, "Jorge Jesus", "778.556.170-27", "jorgejj@mail.com", encoder.encode("8070a2"));
 
 
-        Cliente cli1 = new Cliente(null, "Linus Torvalds", "764.889.34-87", "torvalds@mail.com", "123");
-        Cliente cli2 = new Cliente(null, "Alberto Junior", "644.900.323-58", "albertojunior@mail.com", "456");
-        Cliente cli3 = new Cliente(null, "Mauricio Roberto", "792.043.830-62", "mauricinho@mail.com", "999");
-        Cliente cli4 = new Cliente(null, "Adolfo Vidal", "300.220.800-78", "adolfv@mail.com", "745");
-        Cliente cli5 = new Cliente(null, "Roberto Augusto", "081.399.300-83", "raugusto@mail.com", "4aw322");
-        Cliente cli6 = new Cliente(null, "Delete", "63355747998", "testedelete@gmail.com", "deletar");
+        Cliente cli1 = new Cliente(null, "Linus Torvalds", "764.889.34-87", "torvalds@mail.com", encoder.encode("123"));
+        Cliente cli2 = new Cliente(null, "Alberto Junior", "644.900.323-58", "albertojunior@mail.com", encoder.encode("456"));
+        Cliente cli3 = new Cliente(null, "Mauricio Roberto", "792.043.830-62", "mauricinho@mail.com", encoder.encode("999"));
+        Cliente cli4 = new Cliente(null, "Adolfo Vidal", "300.220.800-78", "adolfv@mail.com", encoder.encode("745"));
+        Cliente cli5 = new Cliente(null, "Roberto Augusto", "081.399.300-83", "raugusto@mail.com", encoder.encode("4aw322"));
+        Cliente cli6 = new Cliente(null, "Delete", "63355747998", "testedelete@gmail.com", encoder.encode("deletar"));
 
 
         Chamado c1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 1", "Primeiro chamado", tec1, cli1);

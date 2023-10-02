@@ -3,7 +3,7 @@ package com.mauro.project.helpdesk.resources;
 import com.mauro.project.helpdesk.dominio.Cliente;
 import com.mauro.project.helpdesk.dtos.ClienteDTO;
 import com.mauro.project.helpdesk.services.ClienteService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

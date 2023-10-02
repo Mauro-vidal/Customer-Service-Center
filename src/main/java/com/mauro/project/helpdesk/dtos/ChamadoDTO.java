@@ -2,7 +2,7 @@ package com.mauro.project.helpdesk.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mauro.project.helpdesk.dominio.Chamado;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 
 
 import java.io.Serializable;

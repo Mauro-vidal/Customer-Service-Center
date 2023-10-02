@@ -4,7 +4,7 @@ package com.mauro.project.helpdesk.resources;
 import com.mauro.project.helpdesk.dominio.Chamado;
 import com.mauro.project.helpdesk.dtos.ChamadoDTO;
 import com.mauro.project.helpdesk.services.ChamadoService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

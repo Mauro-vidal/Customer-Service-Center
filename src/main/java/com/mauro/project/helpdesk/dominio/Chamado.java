@@ -4,7 +4,7 @@ package com.mauro.project.helpdesk.dominio;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mauro.project.helpdesk.domain.enums.Prioridade;
 import com.mauro.project.helpdesk.domain.enums.Status;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
