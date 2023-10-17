@@ -1,9 +1,14 @@
 package com.mauro.project.helpdesk.dtos;
 
-public class CredenciaisDTO {
+public class CredenciaisDto {
 
     private String email;
     private String senha;
+
+    public CredenciaisDto(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
 
     public String getEmail() {
         return email;

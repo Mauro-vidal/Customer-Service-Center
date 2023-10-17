@@ -25,6 +25,7 @@ public class DBService {
     @Autowired
     private ChamadoRepository chamadoRepository;
 
+
     @Autowired
     private BCryptPasswordEncoder encoder;
 
@@ -38,7 +39,8 @@ public class DBService {
         Tecnico tec3 = new Tecnico(null, "João Pedro", "271.068.470-54", "joaop@mail.com", encoder.encode("123"));
         Tecnico tec4 = new Tecnico(null, "Dorival Junior", "162.720.120-39", "dorivaljunior@mail.com", encoder.encode("300"));
         Tecnico tec5 = new Tecnico(null, "Jorge Jesus", "778.556.170-27", "jorgejj@mail.com", encoder.encode("8070a2"));
-
+        Tecnico tec6 = new Tecnico(null, "Mauro Jose Vidal", "59060809606","mauro@gmail.com", encoder.encode("123") );
+        tec6.addPerfil(Perfil.ADMIN);
 
         Cliente cli1 = new Cliente(null, "Linus Torvalds", "764.889.34-87", "torvalds@mail.com", encoder.encode("123"));
         Cliente cli2 = new Cliente(null, "Alberto Junior", "644.900.323-58", "albertojunior@mail.com", encoder.encode("456"));
@@ -49,6 +51,7 @@ public class DBService {
 
 
         Chamado c1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 1", "Primeiro chamado", tec1, cli1);
+        Chamado c10 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 1", "Primeiro chamado", tec6, cli2);
         Chamado c2 = new Chamado(null, Prioridade.ALTA, Status.ABERTO, "Chamado 2", "Chamado com urgência", tec1, cli2);
         Chamado c3 = new Chamado(null, Prioridade.BAIXA, Status.ENCERRADO, "Chamado 3", "Teste chamado 3", tec2, cli3);
         Chamado c4 = new Chamado(null, Prioridade.ALTA, Status.ABERTO, "Chamado 4", "Chamado de Mauricio, técnico João Pedro", tec3, cli3 );
@@ -57,9 +60,9 @@ public class DBService {
         Chamado c7 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 7", "Teste de chamado 7", tec5, cli4);
 
 
-        tecnicoRepository.saveAll(Arrays.asList(tec1, tec2, tec3, tec4, tec5));
+        tecnicoRepository.saveAll(Arrays.asList(tec1, tec2, tec3, tec4, tec5, tec6));
         clienteRepository.saveAll(Arrays.asList(cli1, cli2, cli3, cli4, cli5, cli6));
-        chamadoRepository.saveAll(Arrays.asList(c1, c2, c3, c4, c5, c6, c7));
+        chamadoRepository.saveAll(Arrays.asList(c1, c2, c3, c4, c5, c6, c7 , c10));
     }
 
 }
