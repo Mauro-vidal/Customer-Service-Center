@@ -31,7 +31,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
         String header = request.getHeader("Authorization");
         if (header != null && header.startsWith("Bearer ")){
             UsernamePasswordAuthenticationToken authToken = getAuthentication(header.substring(7));
-            if (authToken != null){
+            if (authToken != null){ // se for diferente de nulo deu tudo certo
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
         }

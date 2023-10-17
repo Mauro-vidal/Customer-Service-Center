@@ -49,7 +49,7 @@ public class JWTUtil {
 
     private Claims getClaims(String token) {
         try {
-            return Jwts.parser().setSigningKey(secretKey.getAlgorithm()).parseClaimsJwt(token).getBody();
+            return Jwts.parser().setSigningKey(secretKey.getAlgorithm()).parseClaimsJwt(token).getBody(); // getBytes em vez de getAlgorithm
         } catch (Exception e){
             return null;
         }
@@ -58,7 +58,7 @@ public class JWTUtil {
     public String getUsername(String token) {
         Claims claims = getClaims(token);
         if (claims != null){
-            return claims.getSubject();
+            return claims.getSubject(); // tá retornando o username do token
         }
         return null;
     }
