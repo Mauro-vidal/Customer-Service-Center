@@ -5,6 +5,10 @@ public class CredenciaisDto {
     private String email;
     private String senha;
 
+
+    public CredenciaisDto(){
+
+    }
     public CredenciaisDto(String email, String senha) {
         this.email = email;
         this.senha = senha;
